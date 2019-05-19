@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LiveScraper Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="live_scraper_client.js" async></script>
+    <style>
+        .live-updates-box {
+            padding: 20px;
+            border: 1px solid lightgray;
+            height: 400px;
+            margin-top: 20px;
+            overflow-y: scroll;
+        }
+
+        .request-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .statistics-box {
+            padding: 20px;
+            border: 1px solid lightgray;
+            margin-top: 20px;
+        }
+
+        .data-item {
+            display: inline-block;
+            /*background-color: gray;*/
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .data-item-title {
+            font-size: 20px;
+            color: #636e72;
+        }
+
+        .data-item-value {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .data-items-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row" style="margin-top:10px;text-align:center">
+            <div class="col">
+                <h1>Live scraper - <small class="text-muted">Reddit comments</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="live-updates-box">
+                    <h2>Live updates</h2>
+                    <ul class="list-group" id="live-updates-container">
+                        <li class="list-group-item list-group-item-success">
+                            <div class="request-item">
+                                <div class="request-item-url">
+                                Completed request for <a href="https://stackoverflow.com">https://stackoverflow.com</a>
+                                </div>
+
+                                <div class="request-item-time">
+                                    30 seconds ago
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item list-group-item-danger">
+                            <div class="request-item">
+                                <div class="request-item-url">
+                                Failed request for <a href="https://stackoverflow.com">https://google.com</a>
+                                </div>
+
+                                <div class="request-item-time">
+                                    30 seconds ago
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="statistics-box">
+            <div class="row">
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Stats
+                        </div>
+
+                        <div class="card-body">
+                            <div class="data-items-container">
+                                <div class="data-item">
+                                    <div class="data-item-title">Pages scraped</div>
+                                    <div class="data-item-value" id="stats-pages-scraped">135</div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-item-title">Data saved</div>
+                                    <div class="data-item-value" id="stats-data-saved">50MB</div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-item-title">Exceptions thrown</div>
+                                    <div class="data-item-value" id="stats-exceptions-thrown">0</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-4">4</div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+</html>
